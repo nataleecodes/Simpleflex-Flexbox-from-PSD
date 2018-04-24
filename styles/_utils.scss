@@ -1,0 +1,21 @@
+$nav-grey: #fafafa;
+$dark-grey: #3c3c3c;
+$bkg-blk: #313131;
+$darkest-blk: #1f1f1f;
+$yellow: #f8cd51;
+$red: #ff5960;
+$green: #97da62;
+
+
+$light-nav-grey: lighten ($nav-grey, 25%);
+$light-yellow: lighten ($yellow, 25%);
+
+@mixin flex-row-wrap() {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@mixin flex-col-wrap() {
+    display: flex;
+    flex-direction: column;
+}
