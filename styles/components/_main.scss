@@ -1,0 +1,425 @@
+/*-----------------------------------
+ABOUT SECTION STYLES
+-----------------------------------*/
+
+.about-wrapper,
+.skills-wrapper {
+    justify-content: space-around;
+}
+
+.section-about {
+    background: $bkg-blk;
+    .about-wrapper {
+        justify-content: center;
+        .about-item {
+            background: $dark-grey;
+            max-width: 370px;
+            padding: 40px;
+            margin: 20px 5px 60px 5px;
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+            p {
+                width: 70%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+        .about-item:last-of-type {
+            margin-right: 0;
+        }
+        .yellow {
+            border-bottom: 14px solid $yellow;
+        }
+        .red {
+            border-bottom: 14px solid $red;
+        }
+        .green {
+            border-bottom: 14px solid $green;
+        }
+    }
+}
+
+/*-----------------------------------
+SKILLS SECTION STYLES
+-----------------------------------*/
+
+.section-skills {
+    padding-bottom: 50px;
+    p {
+        text-align: center;
+    }
+    background: $darkest-blk;
+    .skills-content-box {
+        flex-basis: 200px;
+        margin: 0 auto;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        h3 {
+            text-align: center;
+        }
+    }
+}
+
+/*-----------------------------------
+PULL QUOTE SECTION STYLES
+-----------------------------------*/
+
+.section-pull-quote {
+    background: #ff5960;
+    padding-top: 80px;
+    blockquote {
+        font-size: 6rem;
+        color: $bkg-blk;
+        text-transform: none;
+        text-align: center;
+        margin: 0;
+        line-height: 5.9rem;
+        font-weight: 700;
+    }
+    .quote-line-1::before {
+        color: white;
+        font-family: sans-serif;
+        font-size: 12rem;
+        padding-right: 40px;
+        content: '“';
+    }
+    .quote-line-1::after {
+        color: white;
+        font-size: 12rem;
+        font-family: sans-serif;
+        padding-right: 40px;
+        content: '”';
+    }
+    p {
+        color: white;
+        font-size: 4rem;
+        font-weight: 300;
+        margin-top: 40px;
+    }
+}
+
+/*-----------------------------------
+PROJECTS SECTION STYLES
+-----------------------------------*/
+
+.section-projects {
+    background: $bkg-blk;
+    .projects-images-wrapper {
+        justify-content: center;
+        position: relative;
+        .right-bracket {
+            position: absolute;
+            top: 40%;
+            right: 0;
+        }
+        .left-bracket {
+            position: absolute;
+            top: 40%;
+            left: 0;
+        }
+    }
+}
+
+/*-----------------------------------
+TEAM SECTION STYLES
+-----------------------------------*/
+
+.section-team {
+    background: $darkest-blk;
+    .team-wrapper {
+        justify-content: space-around;
+        .team-member {
+            max-width: 270px;
+            background: $dark-grey;
+            border-bottom: 14px solid $red;
+            padding-bottom: 40px;
+            img {
+                max-width: 270px;
+                display: block;
+            }
+            .flex-container {
+                justify-content: center;
+            }
+        }
+    }
+}
+/*-----------------------------------
+SOCIAL ICON (FONT AWESOME) STYLES
+-----------------------------------*/
+.fa-fw {
+    padding: 5px;
+    transform: scale(2, 2);
+    margin: 0 10px;
+}
+
+a {
+    .fa-facebook-square {
+        color: #4978c2;
+    }
+    .fa-twitter-square {
+        color: #00abf3;
+    }
+    .fa-pinterest-square {
+        color: #e40000;
+    }
+    .fa-dribbble-square {
+        color: #ff4a94;
+    }
+    .fa-flickr {
+        color: #ff007b;
+    }
+    .fa-google-plus-square {
+        color: #df2719;
+    }
+    .fa-linkedin {
+        color: #00619f;
+    }
+}
+
+/*-----------------------------------
+STATS SECTION STYLES
+-----------------------------------*/
+
+.section-stats {
+    background: $green;
+    .stats-wrapper {
+        justify-content: space-around;
+        padding: 50px 0;
+        .stats-item {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            img {
+                width: 100px;
+            }
+            h1 {
+                color: $bkg-blk;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+PORTFOLIO SECTION STYLES
+-----------------------------------*/
+
+.section-portfolio {
+    background: $bkg-blk;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .portfolio-nav {
+        padding: 20px 0;
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            padding: 0 20px;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+    .portfolio-imgs-wrap {
+        justify-content: center;
+        max-width: 2000px;
+    }
+}
+
+.portfolio-imgs-wrap {
+    figure {
+        img {
+            display: block;
+        }
+        figcaption {
+            text-align: center;
+        }
+    }
+}
+
+figcaption {
+    text-transform: uppercase;
+    background: white;
+}
+
+/*-----------------------------------
+BLOG SECTION STYLES
+-----------------------------------*/
+
+.section-blog {
+    background: $darkest-blk;
+    padding: 50px 0;
+    article {
+        .blog-img-container {
+            max-width: 270px img {
+                width: 100%;
+            }
+        }
+        .post-details {
+            max-width: 300px;
+            justify-content: center;
+            h3 {
+                width: 300px;
+            }
+        }
+    }
+    .post1 {
+        max-width: 570px;
+        border-bottom: 10px solid $yellow;
+        margin-right: 10px;
+        .social-row {
+            padding: 15px 0;
+        }
+    }
+    .post-2-3-container {
+        .post2 {
+            border-right: 10px solid $red;
+        }
+        .post3 {
+            border-right: 10px solid $green;
+        }
+    }
+}
+
+.summary {
+    padding: 0;
+}
+
+.section-blog p {
+    padding: 0;
+    margin: 0;
+}
+
+.section-blog img {
+    display: block;
+}
+
+/*-----------------------------------
+MAP SECTION STYLES
+-----------------------------------*/
+
+.section-map {
+    background: $yellow;
+    position: relative;
+    .directions {
+        .phone {
+            font-weight: 700;
+            font-size: 4rem;
+            color: white;
+        }
+    }
+    a {
+        color: $darkest-blk;
+        font-size: 8rem;
+        font-weight: 700;
+        line-height: 5.5rem;
+        text-transform: none;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+/*-----------------------------------
+CONTACT FORM STYLES
+-----------------------------------*/
+
+.section-contact {
+    background: $darkest-blk;
+    padding-bottom: 30px;
+}
+
+.contact-form {
+    margin-top: 30px;
+    input[type=email], input[type="text"] {
+        background: $dark-grey;
+        border: none;
+        width: 100%;
+        height: 40px;
+        margin: 10px 0;
+    }
+    input[type="submit"]{
+        background: $darkest-blk;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/*-----------------------------------
+WIDGET SECTION STYLES
+-----------------------------------*/
+
+.section-widgets {
+    .widgets-light,
+    .widgets-dark {
+        width: 50%;
+        justify-content: space-around;
+    }
+    .widgets-light {
+        background: #fff;
+    }
+    .widgets-dark {
+        background: $nav-grey;
+    }
+}
+
+.widget {
+    max-width: 270px;
+    h3 {
+        color: $dark-grey;
+        text-align: left;
+    }
+    p {
+        text-align: left;
+    }
+}
+
+.widget-1,
+.widget-3 {
+    p {
+        padding: 0 5px 0 0;
+    }
+}
+
+.widget-2 {
+    max-width: 270px;
+    article {
+        .img-contain {
+            max-width: 60px;
+            img {
+                width: 100%;
+                margin-right: 10px;
+            }
+        }
+        p {
+            line-height: 2rem;
+            padding: 0;
+            margin-left: 5px;
+            min-width: 90px;
+            max-width: 200px;
+            .dark-details {
+                color: $bkg-blk;
+            }
+        }
+    }
+}
+
+.newsletter-form {
+    input[type="email"] {
+        border: none;
+        background: silver;
+        padding: 5px;
+    }
+    input[type="submit"] {
+        padding: 4px;
+        color: $red;
+        background: $nav-grey;
+        border: 2px solid $red;
+    }
+}

@@ -1,11 +1,16 @@
 @import 'setup';
 @import 'utils';
 @import 'typography';
-@import 'components/header';
 @import 'components/nav';
+@import 'components/header';
+@import 'components/main';
 @import 'components/footer';
-@import 'components/hero';
 
+
+/*=========================================
+GLOBAL STYLES 
+(Reusable classes applied to HTML elements rather than re-written per each element in full in CSS)
+==========================================*/
 
 .main-flex-wrapper {
     display: flex;
@@ -23,66 +28,9 @@
     @include flex-row-wrap();
 }
 
-p.large {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-p.large::after {
-    content: " ";
-    color: $bkg-blk;
-    border-bottom: 1px solid $dark-grey;
-    width: 200px;
-    padding: 15px 0 25px 0;
-}
-
-.header {
-    // background: pink;
-}
-
-.top-nav {
-    @include flex-row-wrap();
-    // display: flex;
-    // flex-flow: row wrap;
-    img {
-        min-width: 180px;
-        display: block;
-        margin: 0 auto;
-        padding: 10px 0;
-    }
-    .logo-box {
-        background: $light-nav-grey;
-        width: 50%;
-        min-width: 600px;
-        flex-grow: 1;
-    }
-    ul {
-        background: $nav-grey;
-        @include flex-row-wrap();
-        width: 50%;
-        list-style: none; 
-        margin: 0;  
-        flex-grow: 1;
-        li {
-            padding: 25px 10px 10px 10px;
-            min-width: 100px;
-            a:hover {
-                color:#ff5960;
-            }
-        }
-    }
-}
-
-.section-hero {
-    background: $yellow;
-    h1 {
-        margin: 0;
-        padding: 0;
-    }
-    .white {
-        color: white;
-    }
+.content-wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
 }
 
 .white-btn {
@@ -90,280 +38,233 @@ p.large::after {
     padding: 15px;
     text-decoration: none;
     color: white;
+    text-transform: uppercase;
 }
 
-.about-wrapper, .skills-wrapper {
-    max-width: 1170px;
-    justify-content: space-around;
-    margin: 0 auto;
+.white-text {
+    color: white;
 }
 
-.section-about {
-    background: $bkg-blk;
-    .about-wrapper {
-        .about-item{
-            background: $dark-grey;
-            max-width: 370px;
-            padding: 40px;
-            margin: 20px 0 60px 0;
-            img {
-                display: block;
-                margin: 0 auto;
-            }
-            p {
-                width: 70%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-        }
-        .about-item:last-of-type {
-            margin-right: 0;
-        }
-        .yellow {
-            border-bottom: 14px solid $yellow;
-        }
-        .red {
-            border-bottom: 14px solid $red;
-        }
-        .green {
-            border-bottom: 14px solid $green;
+/*=========================================
+MEDIA QUERIES
+==========================================*/
+
+/*--------------------------------------------
+Portrait tablet and small desktops 
+---------------------------------------------*/
+
+@media (max-width: 1200px) {
+    .nav-list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        .nav-item {
+            width: 100px;
         }
     }
 }
 
-.section-skills {
-    padding-bottom: 50px;
-    p{
-        text-align: center;
-    }
-    background: $darkest-blk;
-    .skills-content-box {
-        max-width: 200px;
-        margin: 0 auto;
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-        h3 {
+@media (max-width: 600px) {
+    .nav-list {
+        display: flex;
+        flex-flow: row wrap;
+        .nav-item {
+            width: 100vw;
             text-align: center;
         }
     }
+
+    .top-nav .logo-box {
+        min-width: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        padding-left: 45px;
+    }
 }
 
-.section-pull-quote {
-    background: #ff5960;
-    padding-top: 80px;
-    blockquote {
-        font-size: 6rem;
-        color: $bkg-blk;
-        text-transform: none;
-        text-align: center;
+/*------------------------------------------
+Resize Skills Section Flex Items
+-------------------------------------------*/
+@media (max-width: 1116px) {
+    .section-skills .skills-content-box {
         margin: 0;
-        line-height: 5.9rem;
-        font-weight: 700;
+        flex-basis: 400px;
+        padding: 0 20px;
     }
-    .quote-line-1::before {
-        color: white;
-        font-family: sans-serif;
-        font-size: 12rem;
-        padding-right: 40px;
-        content: '“';
+}
+
+/*-------------------------------------------
+Resize Team Members (Team Section Flex Items)
+and Stats Section Items
+-------------------------------------------*/
+@media (max-width: 1105px) {
+    .section-team {
+        padding-bottom: 70px;
     }
-    .quote-line-1::after {
-        color: white;
-        font-size: 12rem;
-        font-family: sans-serif;
-        padding-right: 40px;
-        content: '”';
+    .section-team .team-wrapper .team-member{
+        max-width: none;
+        flex-basis: 275px;
+        padding: 10px 50px;
+        margin-bottom: 40px;
+        img {
+            max-width: none;
+        }
+    }
+    .section-stats .stats-wrapper .stats-item {
+        flex-basis: 450px;
+        margin-bottom: 60px;
+    }
+}
+
+/*-------------------------------------------
+Resize Hero Items
+-------------------------------------------*/
+@media (max-width: 1036px) {
+    .yellow-bkg-light, .yellow-bkg-dark {
+        flex-basis: 1036px;
+        justify-content: center;
+        padding: 0;
+    }
+    .hero-text {
+        max-width: 100%;
+        @include flex-col-wrap;
+        align-items: center;
+    }
+    .hero-img {
+        display: none;
+    }
+}
+
+/*-------------------------------------------
+Resize Portfolio Images (Portfolio Section)
+-------------------------------------------*/
+
+/* First breakpoint when layout needs updates */
+@media (max-width: 2130px) {
+    .section-portfolio .portfolio-imgs-wrap {
+    max-width: 1100px;
+    }
+}
+
+/* Second breakpoint when layout needs updates */
+@media (max-width: 1265px) {
+    .section-portfolio .portfolio-imgs-wrap {
+        max-width: 90%;
+    }
+}
+
+/*-------------------------------------------
+Resize Pull Quote Section 
+-------------------------------------------*/
+
+@media (max-width: 793px) {
+    .section-pull-quote .quote-line-1::before {
+        content: "";
+    }
+
+    .section-pull-quote .quote-line-1::after {
+        content: "";
+    }
+}
+
+/*-------------------------------------------
+Resize Blog Section 
+-------------------------------------------*/
+
+/* First breakpoint when layout needs updates */
+@media (max-width: 1125px) {
+    .section-blog .blog-container {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .section-blog .post-2-3-container .post2,
+    .section-blog .post-2-3-container .post3 {
+        border-right: none;
+        border: 1px solid white;
+        margin: 40px 0px 20px 0px;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 600px) {
+    .section-blog .post-2-3-container .post2,
+    .section-blog .post-2-3-container .post3 {
+        width: 100%;
+        justify-content: center;
+        padding-top: 20px;
+        border-right: none;
+    }
+    
+    .section-blog .post-2-3-container .post2 {
+        border-bottom: 10px solid $red;
+    }
+
+    .section-blog article .post-details {
+        justify-content: center;
+    }
+
+    .social-row {
+        padding: 10px 0;
+    }
+}
+
+/*------------------------------------------
+Resize Map Section Text
+-------------------------------------------*/
+
+@media (max-width: 600px) {
+    .section-map {
+        a {
+        font-size: 2.5rem;
+    }
+    .phone {
+        font-size: 3rem;
     }
     p {
-        color: white;
+        max-width: 400px;
+    }
+    }
+}
+
+/*------------------------------------------
+Resize Widget Section Text
+-------------------------------------------*/
+
+@media (max-width: 1251px) {
+    .section-widgets{
+        flex-basis: 600px;
+    }
+}
+
+/*-------------------------------------------
+Mobile Layout Rules
+-------------------------------------------*/
+
+@media (max-width: 400px) {
+    .section-skills .skills-content-box {
+        flex-basis: 300px;
+    }
+
+    .section-team .team-wrapper .team-member{
+        flex-basis: 300px;
+    }
+
+    .section-stats .stats-wrapper .stats-item{
+        flex-basis: 300px;
+    }
+
+    .yellow-bkg-light, .yellow-bkg-dark{
+        flex-basis: 300px;
+    }
+
+    p.large {
+        font-size: 3rem;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    blockquote {
         font-size: 4rem;
-        font-weight: 300;
-        margin-top: 40px;
     }
 }
-
-.section-projects {
-    background: $bkg-blk;
-    .projects-images-wrapper {
-        max-width: 1170px;
-        justify-content: center;
-        margin: 0 auto;
-        position: relative;
-        .right-bracket{
-            position: absolute;
-            top: 40%;
-            right: 0;
-        }
-        .left-bracket {
-            position: absolute;
-            top: 40%;
-            left: 0;
-        }
-    }
-}
-
-.section-team {
-    background: $darkest-blk;
-    .team-wrapper {
-        justify-content: space-around;
-        max-width: 1170px;
-        margin: 0 auto;
-        .team-member {
-            max-width: 270px; 
-            background: $dark-grey;
-            border-bottom: 14px solid $red;
-            padding-bottom: 40px;
-            img {
-                max-width: 270px;
-                display: block;
-            }
-            .flex-container {
-                justify-content: center;
-            }
-        }
-    }    
-}
-
-.fa-fw {
-    padding: 5px;
-    transform: scale(2, 2);
-    margin: 0 10px;
-}
-
-a {
-      .fa-facebook-square {
-          color: #4978c2;
-      }
-
-      .fa-twitter-square {
-          color: #00abf3;
-      }
-
-      .fa-pinterest-square {
-          color: #e40000;
-      }
-
-      .fa-dribbble-square {
-          color: #ff4a94;
-      }
-
-      .fa-flickr {
-          color: #ff007b;
-      }
-
-      .fa-google-plus-square {
-          color: #df2719;
-      }
-
-      .fa-linkedin {
-          color: #00619f;
-      }
-}
-
-.section-stats {
-    background: $green;
-    .stats-wrapper {
-        justify-content: space-around;
-        max-width: 1170px;
-        margin: 0 auto;
-        padding: 50px 0;
-        .stats-item {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            img {
-                width: 100px;
-            }
-            h1 {
-                color: $bkg-blk;
-                font-weight: 700;
-                margin-bottom: 15px;
-            }
-        }
-    }
-}
-
-.section-portfolio {
-    background: $bkg-blk;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .portfolio-nav {
-        max-width: 1170px;
-        justify-content: space-between; /*WHY DOESN"T THIS WORK!?!?!!?!??!?!!?!??!?!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-        a {
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            padding: 0 20px;
-            &:hover {
-                color: $red;
-            }
-        }
-    }
-
-}
-
-.portfolio-imgs-wrap {
-    figure {
-        img {
-            display: block;
-        }
-        figcaption {
-            text-align: center;
-        }
-    }
-}
-
-figcaption {
-    text-transform: uppercase;
-    background: white;
-}
-
-.section-blog {
-    background: $darkest-blk;
-    article {
-        .title {
-
-        }
-        .date {
-            text-transform: uppercase;
-        }
-    }
-}
-
-.section-map {
-    background: $yellow;
-}
-
-.section-contact {
-    background: $darkest-blk;
-}
-
-.widget-title {
-        color: $dark-grey;
-} /*TODO FIX COLOR ___________*/
-
-.widget {
-    max-width: calc(100vh \ 2);
-}
-
-.section-widgets{
-    justify-content: center;
-    .light-grey-widgets {
-        max-width: calc(100vh \ 2);
-        justify-content: flex-end;
-    }
-    .darker-grey-widgets {
-        max-width: calc(100vw \ 2);
-        background: $nav-grey;
-    }
-}
-
-.footer {
-    background: $darkest-blk;
-}
-
-

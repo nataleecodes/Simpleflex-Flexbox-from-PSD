@@ -1,0 +1,31 @@
+.top-nav {
+    @include flex-row-wrap(); // display: flex;
+    // flex-flow: row wrap;
+    img {
+        min-width: 180px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .logo-box {
+        background: #fff;
+        width: 50%;
+        min-width: 600px;
+        flex-grow: 1;
+    }
+    ul {
+        background: $nav-grey;
+        @include flex-row-wrap();
+        width: 50%;
+        list-style: none;
+        margin: 0;
+        flex-grow: 1;
+        li {
+            padding: 25px 10px 10px 10px;
+            min-width: 100px;
+            a:hover {
+                color: #ff5960;
+            }
+        }
+    }
+}

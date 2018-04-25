@@ -1,0 +1,40 @@
+.section-hero {
+    .yellow-bkg-light,
+    .yellow-bkg-dark {
+        padding-top: 40px;
+        width: 50%;
+        position: relative;
+    }
+    .yellow-bkg-light {
+        background: $light-yellow;
+        justify-content: flex-end;
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        .white {
+            color: white;
+        }
+    }
+    .yellow-bkg-dark {
+        background: $yellow;
+    }
+}
+
+.hero-text,
+.hero-img {
+    max-width: 485px;
+}
+
+.hero-text {
+    padding: 150px 0;
+    margin-right: 50px;
+    .large::after {
+        display: none;
+    }
+}
+
+.hero-img {
+    position: absolute;
+    left: -83px;
+}
